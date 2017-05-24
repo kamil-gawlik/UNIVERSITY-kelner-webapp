@@ -1,29 +1,38 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
-import 'rxjs/add/operator/toPromise';
+import { Headers, Http, Response } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class DataServiceService {
 
   constructor(private http: Http) { }
 
-//  private appUrl = 'http://kelnerapi.azurewebsites.net';
-  private appUrl = 'http://localhost:3000';
+  //  private appUrl = 'http://kelnerapi.azurewebsites.net';
+  private appUrl = 'https://kelnerapi.azurewebsites.net';
   private tablesList = '/tables/list';
+  private singleTable = '/tables/'
 
-  private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error); // for demo purposes only
-    return Promise.reject(error.message || error);
-  }
-
-  getTablesData(): Promise<Table[]> {
+  getAllTables() {
     const url = `${this.appUrl}${this.tablesList}`;
-    console.log('GET from '+url);
+    console.log('GET from ' + url);
     return this.http.get(url)
-      .toPromise()
-      .then(response => response.json().data as Table[])
-      .catch(this.handleError);
+      .map((res: Response) => res.json());
   }
+
+  getTable(id: number) {
+    const url = `${this.appUrl}${this.singleTable}${id}`;
+    console.log('Get from ' + url);
+    return this.http.get(url)
+      .map((res: Response) => res.json());
+
+  }
+
+}
+
+export interface Meal {
+  meal_id: number;
+  meal_description: string;
+  meal_cost?: number;
 }
 
 export interface Table {
@@ -31,25 +40,37 @@ export interface Table {
   description: string;
   is_active: boolean;
 }
+export interface Table2 { // second representation, dont ask my why...
+  table_id: number;
+  table_description: string;
+  active_order_id?: number;
+}
+export interface TableFullInfo {
+  table_info: Table2;
+  table_meals: Meal[];
+}
 
-/*
-// Add headers
-app.use(function (req, res, next) {
+export class SingleRowTable {
+  table_id: number;
+  table_description: string;
+  meal_id: number;
+  meal_description: string;
+  meal_cost: number;
 
-    // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8888');
+  constructor(table: Table2, meal: Meal) {
+    this.table_id = table.table_id;
+    this.table_description = table.table_description;
+    this.meal_id = meal.meal_id;
+    this.meal_description = meal.meal_description;
+    this.meal_cost = meal.meal_cost;
+  }
+}
 
-    // Request methods you wish to allow
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+export function buidlRowsFromFullData(full: TableFullInfo): SingleRowTable[] {
+  var res: SingleRowTable[] = [];
+  full.table_meals.map((m: Meal) =>
+    res.push(new SingleRowTable(full.table_info, m))
+  );
+  return res;
+}
 
-    // Request headers you wish to allow
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-
-    // Set to true if you need the website to include cookies in the requests sent
-    // to the API (e.g. in case you use sessions)
-    res.setHeader('Access-Control-Allow-Credentials', true);
-
-    // Pass to next layer of middleware
-    next();
-}); 
-*/

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataServiceService, Table } from '../data-service.service'
-
+import { DataServiceService, Table, TableFullInfo, SingleRowTable, buidlRowsFromFullData } from '../data-service.service'
+import {LocalDataSource} from 'ng2-smart-table';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -8,14 +8,44 @@ import { DataServiceService, Table } from '../data-service.service'
 })
 export class TableComponent implements OnInit {
 
-  tableData : Table[];
+  settings = {
+    columns: {
+      table_id: { title: "id" },
+      table_description: { title: "opis" },
+      meal_id: { title: "meal id" },
+      meal_description: { title: "opis dania" },
+      meal_cost: { title: "koszt" }
+    }
+  };
 
-  getTableData(): void {
-    this.dataService.getTablesData().then(data => this.tableData = data);
-    console.log(this.tableData);
+  tables: Table[];
+  //data: SingleRowTable[] = [];
+   data: LocalDataSource;
+
+  constructor(private dataService: DataServiceService) { 
+    this.data = new LocalDataSource();
   }
 
-  constructor(private dataService: DataServiceService) { }
+  getTableData(): void {
+
+    var getActive = function (table: Table) {
+      return table.is_active;
+    }
+
+    this.dataService.getAllTables()
+      .subscribe(data => {
+        this.tables = <Table[]>data;
+        this.tables.filter(getActive).map(t => {
+          this.dataService.getTable(t.id)
+            .subscribe((tFull: TableFullInfo) =>
+              //this.data = this.data.concat(buidlRowsFromFullData(tFull))
+              //this.data.load(buidlRowsFromFullData(tFull))
+              buidlRowsFromFullData(tFull).map(c=>this.data.append(c))
+            )
+        }
+        )
+      });
+  }
 
   ngOnInit() {
     this.getTableData();

@@ -6,6 +6,8 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { TableComponent } from './table/table.component';
 import { DataServiceService } from './data-service.service';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +16,8 @@ import { DataServiceService } from './data-service.service';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    Ng2SmartTableModule
   ],
   providers: [DataServiceService],
   bootstrap: [AppComponent]

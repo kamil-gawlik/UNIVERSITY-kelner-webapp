@@ -12,6 +12,7 @@ export class TableComponent implements OnInit {
 
   getTableData(): void {
     this.dataService.getTablesData().then(data => this.tableData = data);
+    console.log(this.tableData);
   }
 
   constructor(private dataService: DataServiceService) { }

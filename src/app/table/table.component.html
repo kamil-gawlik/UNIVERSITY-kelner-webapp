@@ -1,4 +1,19 @@
-<p>
-  table works!
-</p>
-<ng2-smart-table [settings]="settings" [source]="data"></ng2-smart-table>
+<h2>
+  All Tables</h2>
+<div *ngIf="selectedTable">
+  <button (click)="gotoDetail()">
+    <h3>
+    View Details: {{selectedTable.table_id}}: {{selectedTable.table_description}} {{selectedTable.meal_description}}
+  </h3>
+  </button>
+</div>
+<ul class="heroes">
+  <li *ngFor="let table of tables" (click)="onSelect(table)" [class.selected]="table === selectedTable">
+    <span class="badge">{{table.table_id}}: {{table.table_description}}</span>
+    <span> 
+      {{table.meal_description}}
+      {{table.meal_cost}}
+    </span>
+    <!--<button class="delete" (click)="delete(hero); $event.stopPropagation()">x</button>-->
+  </li>
+</ul>

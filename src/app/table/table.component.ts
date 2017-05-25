@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { DataServiceService, Table, TableFullInfo, SingleRowTable, buidlRowsFromFullData } from '../data-service.service'
-import {LocalDataSource} from 'ng2-smart-table';
+import { Table, TableFullInfo, SingleRowTable, buidlRowsFromFullData } from '../data-modesl';
+import { DataService } from '../data-service.service'
+import { Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -8,23 +11,13 @@ import {LocalDataSource} from 'ng2-smart-table';
 })
 export class TableComponent implements OnInit {
 
-  settings = {
-    columns: {
-      table_id: { title: "id" },
-      table_description: { title: "opis" },
-      meal_id: { title: "meal id" },
-      meal_description: { title: "opis dania" },
-      meal_cost: { title: "koszt" }
-    }
-  };
 
-  tables: Table[];
-  //data: SingleRowTable[] = [];
-   data: LocalDataSource;
+  tables: SingleRowTable[] = [];
+  selectedTable: SingleRowTable;
 
-  constructor(private dataService: DataServiceService) { 
-    this.data = new LocalDataSource();
-  }
+  constructor(
+    private dataService: DataService,
+    private router: Router) { }
 
   getTableData(): void {
 
@@ -34,21 +27,52 @@ export class TableComponent implements OnInit {
 
     this.dataService.getAllTables()
       .subscribe(data => {
-        this.tables = <Table[]>data;
-        this.tables.filter(getActive).map(t => {
-          this.dataService.getTable(t.id)
+        let tables = <Table[]>data;
+        tables.filter(getActive).map(t => {
+          this.dataService.getTable(t.table_id)
             .subscribe((tFull: TableFullInfo) =>
-              //this.data = this.data.concat(buidlRowsFromFullData(tFull))
-              //this.data.load(buidlRowsFromFullData(tFull))
-              buidlRowsFromFullData(tFull).map(c=>this.data.append(c))
+              this.tables = this.tables.concat(buidlRowsFromFullData(tFull))
+            //this.data.load(buidlRowsFromFullData(tFull))
+            //buidlRowsFromFullData(tFull).map(c => this.data.append(c))
             )
         }
         )
       });
   }
-
-  ngOnInit() {
+  ngOnInit(): void {
     this.getTableData();
   }
+  onSelect(t: SingleRowTable): void {
+    this.selectedTable = t;
+  }
 
+  gotoDetail(): void {
+    this.router.navigate(['/detail', this.selectedTable.table_id]);
+  }
+
+
+/*
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.heroService.create(name)
+      .then(hero => {
+        this.heroes.push(hero);
+        this.selectedHero = null;
+      });
+  }
+
+  delete(hero: Hero): void {
+    this.heroService
+      .delete(hero.id)
+      .then(() => {
+        this.heroes = this.heroes.filter(h => h !== hero);
+        if (this.selectedHero === hero) { this.selectedHero = null; }
+      });
+  }
+*/
+  
+ 
 }
+
+

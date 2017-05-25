@@ -1,0 +1,11 @@
+<h3>Dashboard</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let table of tables"  [routerLink]="['/detail', tables.table_id]"  class="col-1-4">
+    <div class="module hero">
+      <h4>{{table.table_description}}</h4>
+      <div *ngFor="let meal of table.table_meals">
+          {{meal.meal_description}}
+      </div>
+    </div>
+  </a>
+</div>

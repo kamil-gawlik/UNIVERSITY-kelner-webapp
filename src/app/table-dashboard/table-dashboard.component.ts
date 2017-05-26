@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { TableFullInfo, Table } from '../data-modesl'
-import { DataService } from '../data-service.service'
+import {Component, OnInit} from '@angular/core';
+import {TableFullInfo, Table} from '../data-modesl';
+import {DataService} from '../data-service.service';
+import {Router} from '@angular/router';
+
 @Component({
   selector: 'app-table-dashboard',
   templateUrl: './table-dashboard.component.html',
@@ -9,27 +11,39 @@ import { DataService } from '../data-service.service'
 export class TableDashboardComponent implements OnInit {
 
   tables: TableFullInfo[] = [];
+  selectedTable: TableFullInfo;
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private router: Router) {
+  }
 
   getTables() {
 
-    var getActive = function (table: Table) {
+    const getActive = function (table: Table) {
       return table.is_active;
     }
 
     this.dataService.getAllTables()
       .subscribe(data => {
-        let tables = <Table[]>data;
+        const tables = <Table[]>data;
         tables.filter(getActive).map(t => {
-          this.dataService.getTable(t.table_id)
-            .subscribe((tFull: TableFullInfo) => this.tables.push(tFull))
-        }
+            this.dataService.getTable(t.table_id)
+              .subscribe((tFull: TableFullInfo) => this.tables.push(tFull))
+          }
         )
       });
   }
+
   ngOnInit(): void {
     this.getTables();
   }
+
+  onSelect(t: TableFullInfo): void {
+    this.selectedTable = t;
+  }
+
+  gotoDetail(): void {
+    this.router.navigate(['/detail', this.selectedTable.table_id ], { queryParams: { mealId: 1 } });
+  }
+
 
 }

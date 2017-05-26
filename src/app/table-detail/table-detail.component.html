@@ -1,3 +1,16 @@
-<p>
-  table-detail works!
-</p>
+<div *ngIf="table">
+  <div><label>Table: </label>{{table.table_id}} - {{table.table_description}}</div>
+  <div class="grid grid-pad">
+    <div class="col-4-1" *ngFor="let meal of table.table_meals">
+      <div class="module heroes">
+        <h4>Danie: {{meal.meal_id}} - {{meal.meal_description}}, cena: {{meal.meal_cost}}</h4>
+        <label>status: </label>
+        <md-select  [(ngModel)]="meal.status" placeholder="status" >
+          <md-option *ngFor="let s of statuses" [class.selected]="s === meal.status" [value]="s">{{s}}</md-option>
+        </md-select>
+      </div>
+    </div>
+  </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="save()">Save</button>
+</div>

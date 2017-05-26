@@ -1,16 +1,12 @@
-<h2>
-  All Tables</h2>
-<div *ngIf="selectedTable">
-  <button (click)="gotoDetail()">
-    <h3>
-    View Details: {{selectedTable.table_id}}: {{selectedTable.table_description}} {{selectedTable.meal_description}}
-  </h3>
-  </button>
-</div>
+<nav *ngIf="selectedTable">
+  <a (click)="gotoDetail()">
+    Edit: {{selectedTable.table_id}}: {{selectedTable.table_description}} {{selectedTable.meal_description}}
+  </a>
+</nav>
 <ul class="heroes">
   <li *ngFor="let table of tables" (click)="onSelect(table)" [class.selected]="table === selectedTable">
     <span class="badge">{{table.table_id}}: {{table.table_description}}</span>
-    <span> 
+    <span>
       {{table.meal_description}}
       {{table.meal_cost}}
     </span>

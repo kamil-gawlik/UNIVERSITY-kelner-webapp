@@ -1,13 +1,13 @@
-
-export interface Meal {
+export interface Meal3 {
   id: number;
   description: string;
   cost?: number;
 }
-export interface Meal2 {
+export interface Meal {
   meal_id: number;
   meal_description: string;
   meal_cost?: number;
+  status?: string;
 }
 
 export interface Table { // second representation, dont ask my why...
@@ -20,7 +20,7 @@ export interface TableFullInfo {
   table_id: number;
   table_description: string;
   active_order_id?: number;
-  table_meals: Meal2[];
+  table_meals: Meal[];
 }
 
 export class SingleRowTable {
@@ -31,7 +31,7 @@ export class SingleRowTable {
   meal_description: string;
   meal_cost: number;
 
-  constructor(table: TableFullInfo, meal: Meal2) {
+  constructor(table: TableFullInfo, meal: Meal) {
     this.table_id = table.table_id;
     this.table_description = table.table_description;
     this.active_order_id = table.active_order_id;
@@ -43,7 +43,7 @@ export class SingleRowTable {
 
 export function buidlRowsFromFullData(full: TableFullInfo): SingleRowTable[] {
   var res: SingleRowTable[] = [];
-  full.table_meals.map((m: Meal2) =>
+  full.table_meals.map((m: Meal) =>
     res.push(new SingleRowTable(full, m))
   );
   return res;

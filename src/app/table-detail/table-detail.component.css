@@ -19,11 +19,50 @@ button {
   border-radius: 4px;
   cursor: pointer; cursor: hand;
 }
-button:hover {
-  background-color: #cfd8dc;
-}
+
 button:disabled {
   background-color: #eee;
-  color: #ccc; 
+  color: #ccc;
   cursor: auto;
+}
+
+.col-4-1 {
+  width: 30%;
+}
+.module {
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  color: #eee;
+  max-height: 150px;
+  min-width: 120px;
+  background-color: #607D8B;
+  border-radius: 2px;
+}
+
+.module label {
+  color: #EEE
+}
+
+/*
+.module:hover {
+  background-color: #EEE;
+  cursor: pointer;
+  color: #607d8b;
+}
+*/
+
+
+@media (max-width: 600px) {
+  .module {
+    font-size: 10px;
+    max-height: 75px; }
+}
+@media (max-width: 1024px) {
+  .grid {
+    margin: 0;
+  }
+  .module {
+    min-width: 60px;
+  }
 }

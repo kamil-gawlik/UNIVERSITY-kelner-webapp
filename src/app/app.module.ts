@@ -6,7 +6,6 @@ import {HttpModule} from '@angular/http';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {TableComponent} from './table/table.component';
-import {TableComponent2} from './table2/table.component';
 import {DataService} from './data-service.service';
 import {Ng2SmartTableModule} from 'ng2-smart-table';
 import {TableDetailComponent} from './table-detail/table-detail.component';
@@ -19,7 +18,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     TableComponent,
-    TableComponent2,
     TableDetailComponent,
     TableDashboardComponent
   ],

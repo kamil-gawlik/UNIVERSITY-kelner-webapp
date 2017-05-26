@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Table, TableFullInfo, SingleRowTable, buidlRowsFromFullData} from '../data-modesl';
 import {DataService} from '../data-service.service';
 import {Router} from '@angular/router';
-
+import 'rxjs/add/operator/mergeMap';
 
 @Component({
   selector: 'app-table',
@@ -11,9 +11,7 @@ import {Router} from '@angular/router';
 })
 export class TableComponent implements OnInit {
 
-
   tables: SingleRowTable[] = [];
-  selectedTable: SingleRowTable;
 
   constructor(private dataService: DataService,
               private router: Router) {
@@ -41,35 +39,9 @@ export class TableComponent implements OnInit {
     this.getTableData();
   }
 
-  onSelect(t: SingleRowTable): void {
-    this.selectedTable = t;
+  gotoDetail(t: SingleRowTable): void {
+    this.router.navigate(['/detail', t.table_id], {queryParams: {mealId: t.meal_id}});
   }
-
-  gotoDetail(): void {
-    this.router.navigate(['/detail', this.selectedTable.table_id],  { queryParams: { mealId: this.selectedTable.meal_id } });
-  }
-
-
-  /*
-   add(name: string): void {
-   name = name.trim();
-   if (!name) { return; }
-   this.heroService.create(name)
-   .then(hero => {
-   this.heroes.push(hero);
-   this.selectedHero = null;
-   });
-   }
-
-   delete(hero: Hero): void {
-   this.heroService
-   .delete(hero.id)
-   .then(() => {
-   this.heroes = this.heroes.filter(h => h !== hero);
-   if (this.selectedHero === hero) { this.selectedHero = null; }
-   });
-   }
-   */
 
 
 }

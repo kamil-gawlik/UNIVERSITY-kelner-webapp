@@ -41,8 +41,8 @@ export class TableDashboardComponent implements OnInit {
     this.selectedTable = t;
   }
 
-  gotoDetail(): void {
-    this.router.navigate(['/detail', this.selectedTable.table_id ], { queryParams: { mealId: 1 } });
+  gotoDetail(table: TableFullInfo): void {
+    this.router.navigate(['/detail', table.table_id ], { queryParams: {  } });
   }
 
 

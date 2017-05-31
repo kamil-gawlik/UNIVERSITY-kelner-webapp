@@ -13,7 +13,7 @@ export class DataService {
   private tablesList = '/tables/list';
   private singleTable = '/tables/';
   private mealsList = '/meals/list';
-  private editMeals = '/tables/editMeals';
+  private mealDone = '/order_meal/set_done/';
 
   getAllTables() {
     const url = `${this.appUrl}${this.tablesList}`;
@@ -37,14 +37,11 @@ export class DataService {
       .map((res: Response) => res.json());
   }
 
-  updateTable(t: TableFullInfo) {
-    const url = `${this.appUrl}${this.mealsList}`;
-    const headers = new Headers({ 'Content-Type': 'application/json' });
-    const options = new RequestOptions({ headers: headers });
-
-    console.log('POST to ' + url);
-    return this.http.post(url, { /*data here*/} , options)
-      .map((res: Response) => res.json());
+  setMealDone(id: number) {
+    const url = `${this.appUrl}${this.mealDone}${id}`;
+      console.log('GET from ' + url);
+    return this.http.get(url)
+      .map((res: Response) => res.status);
   }
 
   /*

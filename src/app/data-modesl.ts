@@ -1,16 +1,18 @@
-export interface Meal3 {
-  id: number;
-  description: string;
-  cost?: number;
-}
+// export interface Meal3 {
+//   id: number;
+//   description: string;
+//   cost?: number;
+// }
+
 export interface Meal {
   meal_id: number;
   meal_description: string;
   meal_cost?: number;
-  status?: string;
+  meal_status?: string;
+  order_meal_id: number;
 }
 
-export interface Table { // second representation, dont ask my why...
+export interface Table {
   table_id: number;
   table_description: string;
   active_order_id?: number;

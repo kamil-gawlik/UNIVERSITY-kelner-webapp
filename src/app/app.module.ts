@@ -10,7 +10,7 @@ import {DataService} from './data-service.service';
 import {Ng2SmartTableModule} from 'ng2-smart-table';
 import {TableDetailComponent} from './table-detail/table-detail.component';
 import {TableDashboardComponent} from './table-dashboard/table-dashboard.component';
-import {MdSelectModule} from '@angular/material';
+import {MdCheckboxModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
@@ -27,7 +27,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     HttpModule,
     Ng2SmartTableModule,
     AppRoutingModule,
-    MdSelectModule,
+    MdCheckboxModule,
     BrowserAnimationsModule
   ],
   providers: [DataService],

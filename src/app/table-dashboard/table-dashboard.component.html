@@ -5,7 +5,7 @@
     <div class="module hero" (click)="gotoDetail(table)">
       <h4>{{table.table_id}}: {{table.table_description}}</h4>
       <div *ngFor="let meal of table.table_meals">
-          {{meal.meal_description}} status: {{meal.status}}
+          {{meal.meal_description}} status: {{meal.meal_status}}
       </div>
     </div>
   </a>

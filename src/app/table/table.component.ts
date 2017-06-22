@@ -17,8 +17,11 @@ export class TableComponent implements OnInit {
               private router: Router) {
   }
 
+/**
+ *  Geting data from specified service
+ *  returns all active tables 
+ */  
   getTableData(): void {
-
     const getActive = function (table: Table) {
       return table.is_active;
     };
@@ -35,10 +38,18 @@ export class TableComponent implements OnInit {
       });
   }
 
+/**
+ * init function of component
+ * on init event initializes data and download them from server
+ */
   ngOnInit(): void {
     this.getTableData();
   }
 
+/** 
+ * Router function letting user see table details
+ * @param t - SingleRowTable object
+ */
   gotoDetail(t: SingleRowTable): void {
     this.router.navigate(['/detail', t.table_id], {queryParams: {mealId: t.meal_id}});
   }

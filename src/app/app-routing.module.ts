@@ -5,6 +5,9 @@ import {TableDashboardComponent} from './table-dashboard/table-dashboard.compone
 import {TableComponent} from './table/table.component';
 import {TableDetailComponent} from './table-detail/table-detail.component';
 
+/**
+ * Routes avaliable in application
+ */
 const routes: Routes = [
   {path: '', redirectTo: '/table', pathMatch: 'full'},
   {path: 'dashboard', component: TableDashboardComponent},

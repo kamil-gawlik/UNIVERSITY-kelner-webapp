@@ -1,9 +1,6 @@
-// export interface Meal3 {
-//   id: number;
-//   description: string;
-//   cost?: number;
-// }
-
+/**
+ * interface representing meal from db
+ */
 export interface Meal {
   meal_id: number;
   meal_description: string;
@@ -12,12 +9,20 @@ export interface Meal {
   order_meal_id: number;
 }
 
+
+/**
+ * interface representing table from db
+ */
 export interface Table {
   table_id: number;
   table_description: string;
   active_order_id?: number;
   is_active?: boolean;
 }
+
+/**
+ * interface representing join of table and meal, all rows for specyfic table
+ */
 export interface TableFullInfo {
   table_id: number;
   table_description: string;
@@ -25,6 +30,9 @@ export interface TableFullInfo {
   table_meals: Meal[];
 }
 
+/**
+ * interface representing table joined with meal, single row
+ */
 export class SingleRowTable {
   table_id: number;
   table_description: string;
@@ -43,6 +51,12 @@ export class SingleRowTable {
   }
 }
 
+
+/**
+ * builder of SingleRowTable basing on TableFullInfor
+ * @param full - TableFullInfo
+ * @return table of SingleRowTable
+ */
 export function buidlRowsFromFullData(full: TableFullInfo): SingleRowTable[] {
   var res: SingleRowTable[] = [];
   full.table_meals.map((m: Meal) =>

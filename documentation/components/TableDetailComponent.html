@@ -1,0 +1,995 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>kelner-webapp documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	    <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">kelner-webapp documentation</a>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search">
+            </div>
+            <nav>
+            
+                <ul class="list">
+            
+                    <li class="title">
+                        <a href="../index.html">kelner-webapp documentation</a>
+                    </li>
+            
+                    <li class="divider"></li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
+                        <ul class="links">
+                                <li class="link">
+                                    <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                                <li class="link">
+                                    <a 
+                                        
+                                         href="../overview.html" 
+                                         href="../overview.html" 
+                                        >
+                                        <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../modules.html" >
+                            <div class="menu-toggler linked" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            >
+                                <span class="fa fa-archive"></span>
+                                <span class="link-name">Modules</span>
+                                <span class="fa fa-angle-up"></span>
+                            </div>
+                        </a>
+                        <ul class="links collapse in"
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="../modules/AppModule.html" >AppModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/AppRoutingModule.html" >AppRoutingModule</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-components-links"
+                            >
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="fa fa-angle-up"></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="../components/AppComponent.html" >AppComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/TableComponent.html" >TableComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/TableDashboardComponent.html" >TableDashboardComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/TableDetailComponent.html"  data-type="entity-link" class="active" >TableDetailComponent</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-classes-links"
+                            >
+                            <span class="fa fa-file-code-o"></span>
+                            <span>Classes</span>
+                            <span class="fa fa-angle-up"></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-classes-links"
+                            >
+                                <li class="link">
+                                    <a href="../classes/KelnerWebappPage.html" >KelnerWebappPage</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/SingleRowTable.html" >SingleRowTable</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-injectables-links"
+                            >
+                            <span class="fa fa-long-arrow-down"></span>
+                            <span>Injectables</span>
+                            <span class="fa fa-angle-up"></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-injectables-links"
+                            >
+                                <li class="link">
+                                    <a href="../injectables/DataService.html" >DataService</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-interfaces-links"
+                            >
+                            <span class="fa fa-info"></span>
+                            <span>Interfaces</span>
+                            <span class="fa fa-angle-up"></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-interfaces-links"
+                            >
+                                <li class="link">
+                                    <a href="../interfaces/Meal.html" >Meal</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/Table.html" >Table</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../interfaces/TableFullInfo.html" >TableFullInfo</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../routes.html" ><span class="fa fa-code-fork"></span>Routes</a>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                    </li>
+            
+                    <li class="divider"></li>
+                    <li class="copyright">
+                            Documentation generated using <a href="https://compodoc.github.io/website/" target="_blank">
+                                        <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                            </a>
+                    </li>
+            
+                </ul>
+            
+            </nav>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <nav>
+                   
+                       <ul class="list">
+                   
+                           <li class="title">
+                               <a href="../index.html">kelner-webapp documentation</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                   
+                               <div id="book-search-input" role="search">
+                                   <input type="text" placeholder="Type to search">
+                               </div>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
+                               <ul class="links">
+                                       <li class="link">
+                                           <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                           <a 
+                                               
+                                                href="../overview.html" 
+                                                href="../overview.html" 
+                                               >
+                                               <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../modules.html" >
+                                   <div class="menu-toggler linked" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   >
+                                       <span class="fa fa-archive"></span>
+                                       <span class="link-name">Modules</span>
+                                       <span class="fa fa-angle-up"></span>
+                                   </div>
+                               </a>
+                               <ul class="links collapse in"
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="../modules/AppModule.html" >AppModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/AppRoutingModule.html" >AppRoutingModule</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#components-links"
+                   >
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="fa fa-angle-up"></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="../components/AppComponent.html" >AppComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/TableComponent.html" >TableComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/TableDashboardComponent.html" >TableDashboardComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/TableDetailComponent.html"  data-type="entity-link" class="active" >TableDetailComponent</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#classes-links"
+                   >
+                                   <span class="fa fa-file-code-o"></span>
+                                   <span>Classes</span>
+                                   <span class="fa fa-angle-up"></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="classes-links"
+                   >
+                                       <li class="link">
+                                           <a href="../classes/KelnerWebappPage.html" >KelnerWebappPage</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/SingleRowTable.html" >SingleRowTable</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#injectables-links"
+                   >
+                                   <span class="fa fa-long-arrow-down"></span>
+                                   <span>Injectables</span>
+                                   <span class="fa fa-angle-up"></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="injectables-links"
+                   >
+                                       <li class="link">
+                                           <a href="../injectables/DataService.html" >DataService</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#interfaces-links"
+                   >
+                                   <span class="fa fa-info"></span>
+                                   <span>Interfaces</span>
+                                   <span class="fa fa-angle-up"></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="interfaces-links"
+                   >
+                                       <li class="link">
+                                           <a href="../interfaces/Meal.html" >Meal</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/Table.html" >Table</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/TableFullInfo.html" >TableFullInfo</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../routes.html" ><span class="fa fa-code-fork"></span>Routes</a>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                           <li class="copyright">
+                                   Documentation generated using <a href="https://compodoc.github.io/website/" target="_blank">
+                                               <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                                   </a>
+                           </li>
+                   
+                       </ul>
+                   
+                   </nav>
+               </div>
+               <div class="content component">
+                   <div class="content-data">
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>TableDetailComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active">
+        <a href="#infos" id="infos-tab" role="tab" data-toggle="tab" data-link="infos">Infos</a>
+    </li>
+
+    <li>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    </li>
+
+    <li>
+        <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+    </li>
+    <li>
+        <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="infos"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/table-detail/table-detail.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/docs/ts/latest/api/core/index/OnInit-interface.html" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-table-detail</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>table-detail.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./table-detail.component.html</code></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+    <section>
+        <h3 id="constructor">Constructor</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>constructor(dataService: any, route: any, location: any)</code>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/table-detail/table-detail.component.ts:18</a></div>
+                                </td>
+                            </tr>
+    
+                </tbody>
+            </table>
+    </section>
+
+    <section>
+        
+            <h3 id="methods">
+                Methods
+            </h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> getAllMeals</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>getAllMeals()</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/table-detail/table-detail.component.ts:28</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Getting all meals registered on server</p>
+    </div>
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> filterMeals</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>filterMeals(mealId: number, meal: any)</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/table-detail/table-detail.component.ts:37</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Allow filter meals if we want to see only specyfic ones</p>
+    </div>
+    
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>mealId</b>
+                                                    </div>
+                                                    <div>
+                                                        <ul>
+    <li>meal we want to get</li>
+    </ul>
+    
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div>
+                                                        <b>meal</b>
+                                                    </div>
+                                                    <div>
+                                                        <ul>
+    <li>Meal we want to categorize</li>
+    </ul>
+    
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>void</code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> ngOnInit</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>ngOnInit()</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/table-detail/table-detail.component.ts:49</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> save</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>save()</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/table-detail/table-detail.component.ts:64</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Save change of meal status </p>
+    </div>
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> goBack</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>goBack()</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/table-detail/table-detail.component.ts:77</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Router function, go to previosu view</p>
+    </div>
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> changeState</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>changeState(id: number)</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/app/table-detail/table-detail.component.ts:85</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Change status of meal</p>
+    </div>
+    
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <ul class="jsdoc-params">
+                                                <li>
+                                                    <div>
+                                                        <b>id</b>
+                                                    </div>
+                                                    <div>
+                                                        <ul>
+    <li>meal id</li>
+    </ul>
+    
+                                                    </div>
+                                                </li>
+                                        </ul>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>void</code>
+    
+                                </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
+
+    <section>
+        
+            <h3 id="inputs">
+                Properties
+            </h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> availableMeals</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>availableMeals:     <code>{}</code>
+    </bcode>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/table-detail/table-detail.component.ts:17</a></div>
+                                </td>
+                            </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> ł</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>ł:     <code>any</code>
+    </bcode>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/table-detail/table-detail.component.ts:48</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>init function of component
+    on init event initializes data and download them from server</p>
+    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> mealsStatuses</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>mealsStatuses:     <code>{}</code>
+    </bcode>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/table-detail/table-detail.component.ts:18</a></div>
+                                </td>
+                            </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> table</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>table:     <code>any</code>
+    </bcode>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/table-detail/table-detail.component.ts:16</a></div>
+                                </td>
+                            </tr>
+                </tbody>
+            </table>
+    </section>
+</div>
+
+
+    <div class="tab-pane fade tab-source-code" id="source">
+        <pre class="line-numbers"><code class="language-typescript">import {Component, OnInit} from &quot;@angular/core&quot;;
+import {Meal, TableFullInfo} from &quot;../data-modesl&quot;;
+import {DataService} from &quot;../data-service.service&quot;;
+import {ActivatedRoute, Params} from &quot;@angular/router&quot;;
+import {Location} from &quot;@angular/common&quot;;
+import &quot;rxjs/add/operator/switchMap&quot;;
+
+
+@Component({
+  selector: &#x27;app-table-detail&#x27;,
+  templateUrl: &#x27;./table-detail.component.html&#x27;,
+  styleUrls: [&#x27;./table-detail.component.css&#x27;]
+})
+export class TableDetailComponent implements OnInit {
+
+  table: TableFullInfo;
+  availableMeals: Meal[] &#x3D; [];
+  mealsStatuses &#x3D; [];
+
+  constructor(private dataService: DataService,
+              private route: ActivatedRoute,
+              private location: Location) {
+  }
+
+/**
+ * Getting all meals registered on server
+ */
+  getAllMeals(): void {
+    this.dataService.getAllMeals().subscribe((meal: Meal) &#x3D;&gt; this.availableMeals.push(meal));
+  }
+
+/**
+ * Allow filter meals if we want to see only specyfic ones
+ * @param mealId - meal we want to get
+ * @param meal - Meal we want to categorize
+ */
+  filterMeals(mealId: number, meal: Meal) {
+    if (isNaN(mealId)) { // if no filter allow all
+      return true;
+    } else {
+      return meal.meal_id &#x3D;&#x3D;&#x3D; mealId;
+    }
+  }
+
+/**
+ * init function of component
+ * on init event initializes data and download them from server
+ */ł
+  ngOnInit(): void {
+    this.route.params
+      .switchMap((params: Params) &#x3D;&gt; this.dataService.getTable(+params[&#x27;id&#x27;]))
+      .subscribe(table &#x3D;&gt; {
+        this.table &#x3D; table;
+        this.route.queryParams
+          .subscribe((params: Params) &#x3D;&gt; this.table.table_meals &#x3D; this.table.table_meals.filter(this.filterMeals.bind(this, +params[&#x27;mealId&#x27;])));
+        this.table.table_meals.map((m: Meal) &#x3D;&gt; this.mealsStatuses[m.order_meal_id.toString()] &#x3D; false)
+      });
+    this.getAllMeals();
+  }
+
+/**
+ * Save change of meal status 
+ */
+  save(): void {
+    this.table.table_meals.map(m &#x3D;&gt; {
+        if (this.mealsStatuses[m.order_meal_id]) {
+          this.dataService.setMealDone(m.order_meal_id)
+            .subscribe(() &#x3D;&gt; this.goBack())
+        }
+      }
+    )
+  }
+
+/**
+ * Router function, go to previosu view
+ */
+  goBack(): void {
+    this.location.back();
+  }
+
+/**
+ * Change status of meal
+ * @param id - meal id
+ */
+  changeState(id: number): void {
+    this.mealsStatuses[id] &#x3D; !this.mealsStatuses[id]
+    this.mealsStatuses.map(s &#x3D;&gt; console.log(s))
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade" id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div *ngIf&#x3D;&quot;table&quot;&gt;
+  &lt;div&gt;&lt;label&gt;Table: &lt;/label&gt;{{table.table_id}} - {{table.table_description}}&lt;/div&gt;
+  &lt;div class&#x3D;&quot;grid grid-pad&quot;&gt;
+    &lt;div class&#x3D;&quot;col-4-1&quot; *ngFor&#x3D;&quot;let meal of table.table_meals&quot;&gt;
+      &lt;div class&#x3D;&quot;module heroes&quot;&gt;
+        &lt;h4&gt;Danie: {{meal.meal_id}} - {{meal.meal_description}}, cena: {{meal.meal_cost}}&lt;/h4&gt;
+        &lt;h5&gt;Status: {{meal.meal_status}}&lt;/h5&gt;
+        &lt;div *ngIf&#x3D;&quot;meal.meal_status!&#x3D;&#x27;done&#x27;&quot;&gt;
+          &lt;md-checkbox class&#x3D;&quot;example-margin&quot; (click)&#x3D;&quot;changeState(meal.order_meal_id)&quot; [id]&#x3D;meal.order_meal_id&gt;
+            Mark as Done
+          &lt;/md-checkbox&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button (click)&#x3D;&quot;goBack()&quot;&gt;Back&lt;/button&gt;
+    &lt;button (click)&#x3D;&quot;save()&quot;&gt;Save&lt;/button&gt;
+  &lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade" id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div *ngIf="table">  <div><label>Table: </label>{{table.table_id}} - {{table.table_description}}</div>  <div class="grid grid-pad">    <div class="col-4-1" *ngFor="let meal of table.table_meals">      <div class="module heroes">        <h4>Danie: {{meal.meal_id}} - {{meal.meal_description}}, cena: {{meal.meal_cost}}</h4>        <h5>Status: {{meal.meal_status}}</h5>        <div *ngIf="meal.meal_status!=\'done\'">          <md-checkbox class="example-margin" (click)="changeState(meal.order_meal_id)" [id]=meal.order_meal_id>            Mark as Done          </md-checkbox>        </div>      </div>    </div>    <button (click)="goBack()">Back</button>    <button (click)="save()">Save</button>  </div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'TableComponent', 'selector': 'app-table'},{'name': 'TableDashboardComponent', 'selector': 'app-table-dashboard'},{'name': 'TableDetailComponent', 'selector': 'app-table-detail'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'TableDetailComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+           </div>
+       </div>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script>var COMPODOC_CURRENT_PAGE_DEPTH = 1;</script>
+
+       <script src="../js/search/search.js"></script>
+       <script src="../js/search/lunr.min.js"></script>
+       <script src="../js/search/search-lunr.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+       <script src="../js/search/search_index.js"></script>
+
+    </body>
+</html>

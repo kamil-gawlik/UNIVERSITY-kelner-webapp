@@ -15,6 +15,9 @@ export class DataService {
   private mealsList = '/meals/list';
   private mealDone = '/order_meal/set_done/';
 
+  /**
+   * Get all tabbles with their meals
+   */
   getAllTables() {
     const url = `${this.appUrl}${this.tablesList}`;
     console.log('GET from ' + url);
@@ -22,6 +25,11 @@ export class DataService {
       .map((res: Response) => res.json());
   }
 
+/**
+ * Get specyfic table
+ * @param id - table id
+ * @return TabbleFullInfo
+ */
   getTable(id: number) {
     const url = `${this.appUrl}${this.singleTable}${id}`;
     console.log('Get from ' + url);
@@ -30,6 +38,9 @@ export class DataService {
 
   }
 
+/**
+ * Get all meals registered on server
+ */
   getAllMeals() {
     const url = `${this.appUrl}${this.mealsList}`;
     console.log('Get from ' + url);
@@ -37,6 +48,10 @@ export class DataService {
       .map((res: Response) => res.json());
   }
 
+/**
+ * Mark specyfic meal as done using its order_meal id
+ * @param id - order_meal id
+ */
   setMealDone(id: number) {
     const url = `${this.appUrl}${this.mealDone}${id}`;
       console.log('GET from ' + url);
@@ -44,14 +59,6 @@ export class DataService {
       .map((res: Response) => res.status);
   }
 
-  /*
-   POST /tables/addMeal - dodawanie dań do zamówienia
-
-   {
-   "table_id": table_id
-   "meals": [ id_1, id_2, ... ]
-   }
-   */
   addMealsToTable(tableId: number, mealsIds: Array<number>) {
 
   }
